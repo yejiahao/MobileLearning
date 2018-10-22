@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/gh"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tvHistory"
+            style="@style/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dip"
+            android:paddingTop="20dip"
+            android:text=""/>
+
+    <TextView
+            android:id="@+id/tvColumnsName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/listView"
+            android:textSize="24sp"
+            android:textStyle="bold">
+    </TextView>
+
+    <ListView
+            android:id="@+id/lv01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dip">
+    </ListView>
+
+</LinearLayout>

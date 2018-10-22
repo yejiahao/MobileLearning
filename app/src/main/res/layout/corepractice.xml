@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/core"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tvCorePracticeNum"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#aaaaaa"
+            android:gravity="center_horizontal"
+            android:text="@string/testCoreT"
+            android:textSize="26sp"/>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dip"
+            android:orientation="vertical">
+
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="100dip">
+
+            <TextView
+                    android:id="@+id/tvCorePracticeQuestion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dip"
+                    android:singleLine="false"
+                    android:text=""
+                    android:textColor="#080808"/>
+        </ScrollView>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <Button
+                    android:id="@+id/btnCorePracticeA"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/testCoreA"/>
+
+            <Button
+                    android:id="@+id/btnCorePracticeB"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/testCoreB"/>
+
+            <Button
+                    android:id="@+id/btnCorePracticeC"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/testCoreC"/>
+
+            <Button
+                    android:id="@+id/btnCorePracticeD"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/testCoreD"/>
+        </LinearLayout>
+
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="50dip">
+
+            <TextView
+                    android:id="@+id/tvCorePracticeExplain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dip"
+                    android:text=""
+                    android:textColor="#080808"/>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btnPracticePre"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dip"
+                android:text="@string/testCorePre"/>
+
+        <Button
+                android:id="@+id/btnPracticeReturn"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dip"
+                android:text="@string/testCoreReturn"/>
+
+        <Button
+                android:id="@+id/btnPracticeNext"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="90dip"
+                android:text="@string/testCoreNext"/>
+    </LinearLayout>
+
+</LinearLayout>

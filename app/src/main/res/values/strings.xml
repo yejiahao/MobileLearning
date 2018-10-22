@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobileLearning</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="mobile_learning">移动学习</string>
+    <string name="tvUid">用户：   </string>
+    <string name="tvPwd">密码：   </string>
+    <string name="tvPwdConfig">确认：   </string>
+    <string name="btnLogin">登录</string>
+    <string name="btnReg">注册</string>
+    <string name="btnStart">开始答题</string>
+    <string name="btnIntroduce">软件介绍</string>
+    <string name="btnExit">软件退出</string>
+    <string name="btnPractice">练习模式</string>
+    <string name="btnExam">模拟考试</string>
+    <string name="cbRemember">记住密码</string>
+    <string name="btnStartExam">开始考试</string>
+    <string name="btnStartPractice">开始练习</string>
+    <string name="loginErrorMsg">用户名或密码错误</string>
+    <string name="loginUnHint">请输入用户名</string>
+    <string name="loginPwHint">请输入密码</string>
+    <string name="help">\t\t进入21世纪以来，移动网络成为人们生活中不可或缺的一部分，移动互联网的发展为移动学习的开展提供了更广阔的空间，移动学习将会成为未来的学习趋势。\n\n\t\t本软件主要分为练习模式和模拟考试两个模块，不同的用户可以通过这些模块快速方便地对Java知识进行练习和考试，在此基础上还有答案解释、统计分数和计算时间等功能。</string>
+    <string name="tvSpinner">请选择练习章节</string>
+    <string name="testCoreT">CCC</string>
+    <string name="testCoreA">A, insert into</string>
+    <string name="testCoreB">B, insert into</string>
+    <string name="testCoreC">C, insert into</string>
+    <string name="testCoreD">D, insert into</string>
+    <string name="testCorePre">上一题</string>
+    <string name="testCoreSubmit">交卷</string>
+    <string name="testCoreNext">下一题</string>
+    <string name="testCoreReturn">返回</string>
+    <string name="examCount">考试题数： 25题</string>
+    <string name="examTime">考试时间： 20分钟</string>
+    <string name="examStandard">合格标准： 满分100， 60及格</string>
+    <string name="examGrade">你的考试成绩为： </string>
+    <string name="examEncourage">if-else 鼓励语句</string>
+    <string name="btnHistory">个人历史成绩</string>
+    <string name="btnAllHistory">所有人的成绩</string>
+    <string name="listView">编号\t姓名\t  时间\t\t\t\t分数</string>
+
+</resources>

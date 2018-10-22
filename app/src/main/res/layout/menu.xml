@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/login"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tv0"
+            style="@style/title2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dip"
+            android:paddingTop="20dip"
+            android:text="@string/mobile_learning"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="25dp">
+
+        <Button
+                android:id="@+id/btnIntroduce"
+                style="@style/com_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:minWidth="100dip"
+                android:text="@string/btnIntroduce"/>
+
+        <Button
+                android:id="@+id/btnStart"
+                style="@style/com_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:minWidth="100dip"
+                android:text="@string/btnStart"/>
+
+        <Button
+                android:id="@+id/btnExit"
+                style="@style/com_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:minWidth="100dip"
+                android:text="@string/btnExit"/>
+    </LinearLayout>
+
+</LinearLayout>
