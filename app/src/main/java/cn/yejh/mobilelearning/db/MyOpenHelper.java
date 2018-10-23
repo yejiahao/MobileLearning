@@ -14,7 +14,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS User (uid INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR UNIQUE,password VARCHAR)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS User (uid INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR UNIQUE, password VARCHAR)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Grade (gid INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR REFERENCES User (username), time VARCHAR, score INTEGER)");
     }
 

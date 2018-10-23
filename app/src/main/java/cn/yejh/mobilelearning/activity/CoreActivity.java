@@ -85,7 +85,7 @@ public class CoreActivity extends Activity {
     }
 
     private class CurCell {
-        String tigan, ca, cb, cc, cd, correct;
+        String stem, ca, cb, cc, cd, correct;
         String choose = "";
     }
 
@@ -114,7 +114,7 @@ public class CoreActivity extends Activity {
 
             for (int i = 1, j = 0; i < row; i++) {
                 CurCell mCell = new CurCell();
-                mCell.tigan = mSheet.getCell(j, i).getContents();
+                mCell.stem = mSheet.getCell(j, i).getContents();
                 mCell.ca = mSheet.getCell((j + 1), i).getContents();
                 mCell.cb = mSheet.getCell((j + 2), i).getContents();
                 mCell.cc = mSheet.getCell((j + 3), i).getContents();
@@ -133,7 +133,7 @@ public class CoreActivity extends Activity {
         btnPre.setVisibility(View.VISIBLE);
         btnNext.setVisibility(View.VISIBLE);
         int a = index - 1;
-        tvCoreQuestion.setText(index + ". " + mArrayList.get(a).tigan);
+        tvCoreQuestion.setText(index + ". " + mArrayList.get(a).stem);
         btnCoreA.setText("A.  " + mArrayList.get(a).ca);
         btnCoreB.setText("B.  " + mArrayList.get(a).cb);
         btnCoreC.setText("C.  " + mArrayList.get(a).cc);
@@ -170,9 +170,11 @@ public class CoreActivity extends Activity {
     protected void dialog() {
         Builder builder = new Builder(CoreActivity.this);
         int c = 0;
-        for (int i = 0; i < mArrayList.size(); i++)
-            if ("".equals(mArrayList.get(i).choose))
+        for (int i = 0, size = mArrayList.size(); i < size; i++) {
+            if (Objects.equals(mArrayList.get(i).choose, "")) {
                 c++;
+            }
+        }
         builder.setMessage("确认交卷吗？还有 " + c + " 题未完成");
         builder.setIcon(android.R.drawable.ic_dialog_info);
         builder.setTitle("提示");
@@ -198,22 +200,22 @@ public class CoreActivity extends Activity {
                 case R.id.btnCoreA:
                     a = index - 1;
                     mArrayList.get(a).choose = "A";
-                    tvCoreExplain.setText("你选择的是： " + mArrayList.get(a).choose);
+                    tvCoreExplain.setText("你选择的是： A");
                     break;
                 case R.id.btnCoreB:
                     a = index - 1;
                     mArrayList.get(a).choose = "B";
-                    tvCoreExplain.setText("你选择的是： " + mArrayList.get(a).choose);
+                    tvCoreExplain.setText("你选择的是： B");
                     break;
                 case R.id.btnCoreC:
                     a = index - 1;
                     mArrayList.get(a).choose = "C";
-                    tvCoreExplain.setText("你选择的是： " + mArrayList.get(a).choose);
+                    tvCoreExplain.setText("你选择的是： C");
                     break;
                 case R.id.btnCoreD:
                     a = index - 1;
                     mArrayList.get(a).choose = "D";
-                    tvCoreExplain.setText("你选择的是： " + mArrayList.get(a).choose);
+                    tvCoreExplain.setText("你选择的是： D");
                     break;
             }
         }

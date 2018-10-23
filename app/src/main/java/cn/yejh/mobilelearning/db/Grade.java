@@ -1,10 +1,10 @@
 package cn.yejh.mobilelearning.db;
 
 public class Grade {
-    public int gid;// 成绩编号
-    public String username;// 用户名
-    public String time;// 提交成绩时间
-    public int score;// 考试分数
+    private int gid;// 成绩编号
+    private String username;// 用户名
+    private String time;// 提交成绩时间
+    private int score;// 考试分数
 
     public Grade() {
     }

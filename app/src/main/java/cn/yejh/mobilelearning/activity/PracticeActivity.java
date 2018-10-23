@@ -36,7 +36,7 @@ public class PracticeActivity extends Activity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.chapters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);// 设置适配器
-        spinner.setPrompt("请选择练习章节：");
+        spinner.setPrompt("请选择练习章节： ");
         spinner.setSelection(0, true);
         selectNum = spinner.getSelectedItemPosition();
         countNum = spinner.getCount();

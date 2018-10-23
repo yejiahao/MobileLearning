@@ -61,7 +61,6 @@ public class LoginActivity extends Activity {
             l_pDialog.setCancelable(true);
             l_pDialog.show();
             if (dbm.validateUser(user)) {
-
                 GlobalValue.name = etUid.getText().toString().trim();
 
                 new Thread(() -> {
@@ -183,9 +182,10 @@ public class LoginActivity extends Activity {
 
     }
 
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if ((System.currentTimeMillis() - ExitTime) > 2000) {
+            if (System.currentTimeMillis() - ExitTime > 2000) {
                 showToast("再按一次退出程序");
                 ExitTime = System.currentTimeMillis();
             } else {

@@ -43,9 +43,12 @@ public class GradeActivity extends Activity {
         }
 
         btnBackGrade.setOnClickListener(v -> finish());
-
-        btnHistory.setOnClickListener(new ClickEvent());
-        btnAllHistory.setOnClickListener(new ClickEvent());
+        btnHistory.setOnClickListener(v -> {
+            startActivity(new Intent(GradeActivity.this, HistoryActivity.class));// 跳转到个人历史成绩
+        });
+        btnAllHistory.setOnClickListener(v -> {
+            startActivity(new Intent(GradeActivity.this, AllHistoryActivity.class));// 跳转到所有人的成绩
+        });
     }
 
     public static class PlaceholderFragment extends Fragment {
@@ -60,18 +63,4 @@ public class GradeActivity extends Activity {
         }
     }
 
-    class ClickEvent implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.btnHistory:
-                    startActivity(new Intent(GradeActivity.this, HistoryActivity.class));// 跳转到个人历史成绩
-                    break;
-                case R.id.btnAllHistory:
-                    startActivity(new Intent(GradeActivity.this, AllHistoryActivity.class));// 跳转到所有人的成绩
-                    break;
-            }
-        }
-    }
 }

@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CorePracticeActivity extends Activity {
     TextView tvCorePracticeQuestion, tvCorePracticeExplain;// 问题和解释
@@ -57,18 +60,20 @@ public class CorePracticeActivity extends Activity {
         ReadExcel("JavaExam.xls");// 读试卷
         index = 1;
         show(index);// 展示题目
-        btnCorePracticeA.setOnClickListener(new ClickEvent());
-        btnCorePracticeB.setOnClickListener(new ClickEvent());
-        btnCorePracticeC.setOnClickListener(new ClickEvent());
-        btnCorePracticeD.setOnClickListener(new ClickEvent());
+        View.OnClickListener clickEvent = new ClickEvent();
+        btnCorePracticeA.setOnClickListener(clickEvent);
+        btnCorePracticeB.setOnClickListener(clickEvent);
+        btnCorePracticeC.setOnClickListener(clickEvent);
+        btnCorePracticeD.setOnClickListener(clickEvent);
 
-        btnPracticePre.setOnClickListener(new ClickEvent2());
-        btnPracticeNext.setOnClickListener(new ClickEvent2());
+        View.OnClickListener clickEvent2 = new ClickEvent2();
+        btnPracticePre.setOnClickListener(clickEvent2);
+        btnPracticeNext.setOnClickListener(clickEvent2);
     }
 
     // 判断选择是否正确
     public void judge(int i) {
-        if (mArrayList.get(i).choose.equals(mArrayList.get(i).correct)) {
+        if (Objects.equals(mArrayList.get(i).choose, mArrayList.get(i).correct)) {
             tvCorePracticeExplain.append("\t\t\t\t正确！");
         } else {
             tvCorePracticeExplain.append("\t\t\t\t错误！");
@@ -88,7 +93,7 @@ public class CorePracticeActivity extends Activity {
     }
 
     private class CurCell {
-        String tigan, ca, cb, cc, cd, correct, chapter, explain;
+        String stem, ca, cb, cc, cd, correct, chapter, explain;
         String choose = "";
     }
 
@@ -105,7 +110,7 @@ public class CorePracticeActivity extends Activity {
 
             for (int i = 1, j = 0; i < row; i++) {
                 CurCell mCell = new CurCell();
-                mCell.tigan = mSheet.getCell(j, i).getContents();
+                mCell.stem = mSheet.getCell(j, i).getContents();
                 mCell.ca = mSheet.getCell((j + 1), i).getContents();
                 mCell.cb = mSheet.getCell((j + 2), i).getContents();
                 mCell.cc = mSheet.getCell((j + 3), i).getContents();
@@ -126,7 +131,7 @@ public class CorePracticeActivity extends Activity {
         btnPracticePre.setVisibility(View.VISIBLE);
         btnPracticeNext.setVisibility(View.VISIBLE);
         a = (count - 1) / countNum * selectNum + index - 1;
-        tvCorePracticeQuestion.setText(index + ". " + mArrayList.get(a).tigan);
+        tvCorePracticeQuestion.setText(index + ". " + mArrayList.get(a).stem);
         btnCorePracticeA.setText("A.  " + mArrayList.get(a).ca);
         btnCorePracticeB.setText("B.  " + mArrayList.get(a).cb);
         btnCorePracticeC.setText("C.  " + mArrayList.get(a).cc);
@@ -158,7 +163,6 @@ public class CorePracticeActivity extends Activity {
     }
 
     class ClickEvent implements View.OnClickListener {
-
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
@@ -191,7 +195,6 @@ public class CorePracticeActivity extends Activity {
     }
 
     class ClickEvent2 implements View.OnClickListener {
-
         @Override
         public void onClick(View v) {
             switch (v.getId()) {

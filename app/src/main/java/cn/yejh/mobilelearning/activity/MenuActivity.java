@@ -24,9 +24,10 @@ public class MenuActivity extends Activity {
         btnIntroduce = findViewById(R.id.btnIntroduce);
         btnExit = findViewById(R.id.btnExit);
 
-        btnStart.setOnClickListener(new ClickEvent());
-        btnIntroduce.setOnClickListener(new ClickEvent());
-        btnExit.setOnClickListener(new ClickEvent());
+        View.OnClickListener clickEvent = new ClickEvent();
+        btnStart.setOnClickListener(clickEvent);
+        btnIntroduce.setOnClickListener(clickEvent);
+        btnExit.setOnClickListener(clickEvent);
 
     }
 
@@ -66,9 +67,10 @@ public class MenuActivity extends Activity {
     }
 
     // 按两次退出程序
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if ((System.currentTimeMillis() - ExitTime) > 2000) {
+            if (System.currentTimeMillis() - ExitTime > 2000) {
                 showToast("再按一次退出程序");
                 ExitTime = System.currentTimeMillis();
             } else {

@@ -11,6 +11,9 @@ import android.widget.Toast;
 import cn.yejh.mobilelearning.db.DBManager;
 import cn.yejh.mobilelearning.db.User;
 import cn.yejh.mobilelearning.R;
+import cn.yejh.mobilelearning.util.StringUtils;
+
+import java.util.Objects;
 
 public class RegisterActivity extends Activity {
     EditText etUid2, etPwd2, etPwdConfig2;
@@ -32,21 +35,24 @@ public class RegisterActivity extends Activity {
             username = etUid2.getText().toString().trim();
             password = etPwd2.getText().toString().trim();
             passwordConfig = etPwdConfig2.getText().toString().trim();
-            User user = new User(username, password);
 
             // 注册的逻辑判断
-            if (password.equals(passwordConfig)) {
-                if (username == null || "".equals(username) || password == null || "".equals(password)) {
+            if (Objects.equals(password, passwordConfig)) {
+                if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
                     showToast("用户名或密码不能为空！");
-                } else if (dbm.registerUser(user)) {
-                    showToast("此用户已存在！");
                 } else {
-                    dbm.addUser(user);
-                    showToast("创建用户成功！");
-                    new Handler().postDelayed(() -> finish(), 1000);
+                    User user = new User(username, password);
+                    if (dbm.registerUser(user)) {
+                        showToast("此用户已存在！");
+                    } else {
+                        dbm.addUser(user);
+                        showToast("创建用户成功！");
+                        new Handler().postDelayed(() -> finish(), 1000);
+                    }
                 }
-            } else
+            } else {
                 showToast("密码确认有误！");
+            }
         });
 
     }

@@ -1,9 +1,9 @@
 package cn.yejh.mobilelearning.db;
 
 public class User {
-    public int uid;// 用户ID
-    public String username;// 用户名
-    public String password;// 用户密码
+    private int uid;// 用户ID
+    private String username;// 用户名
+    private String password;// 用户密码
 
     public User() {
     }
